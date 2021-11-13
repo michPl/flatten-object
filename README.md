@@ -1,6 +1,6 @@
 # Flattens object to a single level deep.
 
-Simple function to flattens object to a single level deep without dependencies. Can be useful for getting a request to MongoDB from an object.
+Simple function to flattens object to a single level deep object without dependencies. Can be useful for getting a request to MongoDB from an object.
 
 ## Install
 `npm i -S @michpl/flatten-object`
