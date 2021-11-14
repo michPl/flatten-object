@@ -5,11 +5,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  create:
-    tags
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
