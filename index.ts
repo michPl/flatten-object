@@ -2,6 +2,7 @@ type TOutput = Record<string, unknown>;
 type TInputObject = Record<string, any>;
 interface IOptions {
   flattenArray?: boolean;
+  delimiter?: string;
 }
 
 function _isObject(input: any) {
@@ -11,6 +12,7 @@ function _isObject(input: any) {
 function flattenObject(obj: TInputObject = {}, inputOptions: IOptions = {}): TOutput {
   const options = {
     flattenArray: true,
+    delimiter: '.',
     ...inputOptions,
   };
 
@@ -26,7 +28,7 @@ function flattenObject(obj: TInputObject = {}, inputOptions: IOptions = {}): TOu
         const flatObject = flattenObject(obj[key], options);
 
         Object.entries(flatObject).forEach(([name, value]) => {
-          result[`${key}.${name}`] = value;
+          result[`${key}${options.delimiter}${name}`] = value;
         });
 
         return result;

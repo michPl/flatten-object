@@ -71,4 +71,23 @@ describe('Flatten object', () => {
         'deep.deep.level2': 2
       });
   });
+
+  it('Should return the flatten object for the nested object with custom delimiter', () => {
+    const input = {
+      test: 1,
+      deep: {
+        level1: 1,
+        deep: {
+          level2: 2
+        }
+      }
+    };
+
+    expect(flattenObject(input, {delimiter: '-'}))
+      .toEqual({
+        test: 1,
+        'deep-level1': 1,
+        'deep-deep-level2': 2
+      });
+  });
 });
