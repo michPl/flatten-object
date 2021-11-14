@@ -1,5 +1,7 @@
 # Flattens object to a single level deep.
 
+![example workflow](https://github.com/michPl/flatten-object/actions/workflows/ci_test.yml/badge.svg)
+
 Simple function to flattens object to a single level deep object without dependencies. Can be useful for getting a request to MongoDB from an object.
 
 ## Install
@@ -28,3 +30,4 @@ flattenObject({
 | name              | type       | default    | description                   |
 |-------------------|------------|------------|-------------------------------|
 | flattenArray      | boolean    | true       | Set flatten array or not      |
+| delimiter         | string     | '.'        | Delimiter for object keys     |
